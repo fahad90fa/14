@@ -1,0 +1,108 @@
+.valentine-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(45deg, #ff6b6b, #ff8e8e, #ffb3b3);
+  font-family: 'Pacifico', cursive;
+  transition: all 0.5s ease;
+}
+
+.open-button {
+  padding: 20px 40px;
+  font-size: 2em;
+  background: #fff;
+  border: 3px solid #ff4757;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.open-button:hover {
+  transform: scale(1.1) rotate(-3deg);
+  background: #ff4757;
+  color: white;
+}
+
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  position: relative;
+  max-width: 600px;
+  text-align: center;
+  transform: scale(0);
+  animation: cardOpen 0.5s ease forwards;
+}
+
+@keyframes cardOpen {
+  to {
+    transform: scale(1);
+  }
+}
+
+.main-message {
+  color: #ff4757;
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.button-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.yes-button, .no-button {
+  padding: 15px 30px;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Pacifico', cursive;
+}
+
+.yes-button {
+  background: #ff4757;
+  color: white;
+}
+
+.yes-button:hover {
+  background: #ff6b6b;
+  transform: scale(1.1);
+}
+
+.no-button {
+  background: #f1f2f6;
+  color: #2d3436;
+  position: static;
+  transition: all 0.5s ease;
+}
+
+.heart {
+  position: absolute;
+  animation: float 3s infinite linear;
+  font-size: 1.5em;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+.decorations {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Add this to your HTML head for the font */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
